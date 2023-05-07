@@ -12,10 +12,16 @@
 	</select>
 	<div id="emailHelp" *ngIf="vehicles" class="form-text">Total number of vehicles {{vehicles.length}}</div>
 </div>
-<!--<div class="mb-3">
-	<label for="customRange2" class="form-label">Price</label>
+<div class="mb-3">
+	<label for="customRange2" class="form-label">Min Price</label>
 	<input type="range" class="form-range" id="customRange2">	
-</div>-->
+</div>
+<div class="mb-3">
+	<label for="customRange2" class="form-label">Max Price</label>
+	<input type="range" class="form-range" id="customRange2">	
+</div>
+<app-pagination [currentPage]="currentPage" 
+	(change)="onPageChange($event)"></app-pagination>
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -36,3 +42,5 @@
 		</tr>
 	</tbody>
 </table>
+<app-pagination [currentPage]="currentPage" 
+	(change)="onPageChange($event)"></app-pagination>

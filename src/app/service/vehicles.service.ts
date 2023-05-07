@@ -1,8 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { Vehicle } from './vehicle';
-import { environment } from '../environments/environment';
+import { Vehicle } from '../models/vehicle';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -18,12 +18,16 @@ export class VehiclesService {
     return (new HttpHeaders()).append("Authorization", "Bearer "+token);
   }
 
-  getVehicles() {
-    return this.http.get<Vehicle[]>(`${environment.apiBaseUrl}/vehicles`, { headers: this.getHeaders() })
+  getVehicles(page: Number, size: Number) {
+    return this.http.get<{content: Vehicle[]}>(`${environment.apiBaseUrl}/vehicles/paginated?page=${page}&size=${size}`, { 
+      headers: this.getHeaders() 
+    })
   }
 
   findById(vehicleId: number) {
-    return this.http.get<Vehicle>(`${environment.apiBaseUrl}/vehicles/${vehicleId}`, { headers: this.getHeaders() })
+    return this.http.get<Vehicle>(`${environment.apiBaseUrl}/vehicles/${vehicleId}`, { 
+      headers: this.getHeaders() 
+    })
   }
 
 }

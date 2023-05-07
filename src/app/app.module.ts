@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
 import { VehicleDetailComponent } from './vehicle-detail/vehicle-detail.component';
 import { LoginComponent } from './login/login.component';
+import { PaginationComponent } from './global/pagination.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VehicleListComponent,
     VehicleDetailComponent,
-    LoginComponent
+    LoginComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
