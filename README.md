@@ -1,6 +1,6 @@
 # DG-Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
+Front-end for Dealer Gears Spring Boot Java REST API project.
 
 ## Development server
 
