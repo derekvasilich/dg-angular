@@ -12,18 +12,19 @@
         <span aria-hidden="true">&laquo;</span>
       </button>
     </li>
-    <li *ngFor="let key of pageKeys" :key="key" class="page-item">
+    <li *ngFor="let key of pageKeys" class="page-item">
       <button
+        [class]="pageClasses(key)"
         class="page-link"
         tabindex="0"
-        [class]="currentPage === key ? 'active' : ''"
         (click)="!disabled && page(key)"
       >
-        {{ key + 1 }}
+        {{ totalPages > key ? key+1 : '&nbsp;' }}
       </button>
     </li>
     <li class="page-item">
       <button
+        [class]="totalPages-1 <= currentPage ? 'disabled' : ''"
         tabindex="0"
         role="button"
         class="page-link"

@@ -1,0 +1,45 @@
+<form #filterForm="ngForm">
+	<div class="mb-3">
+		<label class="form-label">Search</label>
+		<input [(ngModel)]="filters.query"
+			class="form-control" 
+			name="query">
+	</div>
+	<div class="mb-3">
+		<label class="form-label">Sort by</label>
+		<select [(ngModel)]="filters.sort"
+			value="id" 
+			class="form-select" 
+			name="sort">
+			<option value="">Select...</option>
+			<option value="id">ID</option>
+			<option value="name">Name</option>
+			<option value="price">Price</option>
+			<option value="vin">VIN</option>
+		</select>
+		<div *ngIf="filteredVehicles" class="form-text">
+			Found {{ filteredVehicles.length }} vehicles
+			{{ filters.min | currency }} - {{ filters.max | currency }}
+		</div>
+	</div>
+	<div class="mb-3">
+		<label for="customRange1" class="form-label">Min Price</label>
+		<input [(ngModel)]="filters.min" 
+			[min]="priceRange[0]" 
+			[max]="priceRange[1]" 
+			name="min" 
+			type="range" 
+			class="form-range" 
+			id="customRange1">	
+	</div>
+	<div class="mb-3">
+		<label for="customRange2" class="form-label">Max Price</label>
+		<input [(ngModel)]="filters.max" 
+			[min]="priceRange[0]" 
+			[max]="priceRange[1]" 
+			name="max" 
+			type="range" 
+			class="form-range" 
+			id="customRange2">	
+	</div>
+</form>

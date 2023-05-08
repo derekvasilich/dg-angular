@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angu
 export class PaginationComponent implements OnInit, OnChanges {
     @Input() disabled: boolean = false;
     @Input() currentPage: number = 1;
+    @Input() totalPages: number = 0;
     @Output() change = new EventEmitter<number>();
     pageKeys: number[] = [];
 
@@ -15,6 +16,12 @@ export class PaginationComponent implements OnInit, OnChanges {
   ) { 
     this.calcPageKeys();
   }  
+
+  pageClasses(key: number): String {
+    let classes: String = this.currentPage === key ? 'active' : '';
+    classes += key >= this.totalPages ? ' disabled' : ''
+    return classes;
+  }
 
   calcPageKeys() {
     let first: number = this.currentPage - 5;

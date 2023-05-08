@@ -6,7 +6,10 @@ import { AppComponent } from './app.component';
 import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
 import { VehicleDetailComponent } from './vehicle-detail/vehicle-detail.component';
 import { LoginComponent } from './login/login.component';
-import { PaginationComponent } from './global/pagination.component';
+import { PaginationComponent } from './global/pagination/pagination.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { VehicleFiltersComponent } from './vehicle-filters/vehicle-filters.component';
 
 @NgModule({
   declarations: [
@@ -14,10 +17,13 @@ import { PaginationComponent } from './global/pagination.component';
     VehicleListComponent,
     VehicleDetailComponent,
     LoginComponent,
-    PaginationComponent
+    PaginationComponent,
+    VehicleFiltersComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    FormsModule,
     HttpClientModule,
     AppRoutingModule
   ],
