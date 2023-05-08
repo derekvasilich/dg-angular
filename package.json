@@ -1,6 +1,9 @@
 {
   "name": "dg-angular",
   "version": "0.0.0",
+  "require": {
+    "node": ">=16.14"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
