@@ -1,5 +1,4 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core'
-import { Observable } from 'rxjs'
+import { Component, OnInit } from '@angular/core'
 import { Vehicle } from '../models/vehicle'
 import { VehiclesService } from '../service/vehicles.service'
 import { Router } from '@angular/router'
