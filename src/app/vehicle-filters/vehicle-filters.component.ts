@@ -7,15 +7,12 @@ import { Vehicle } from '../models/vehicle';
   templateUrl: './vehicle-filters.component.html',
   styleUrls: ['./vehicle-filters.component.scss']
 })
-export class VehicleFiltersComponent implements OnInit {
+export class VehicleFiltersComponent {
   @Input() filteredVehicles: Vehicle[];
   @Input() filters: VehicleFilters;
   @Input() priceRange: Number[];
   @Input() disabled: boolean;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

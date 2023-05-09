@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LoginError, LoginFilters } from '../models/login';
 import { Router } from '@angular/router';
 import { LoginService } from '../service/login.service';
@@ -8,7 +8,7 @@ import { LoginService } from '../service/login.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   error: LoginError;
   filters: LoginFilters;
@@ -35,9 +35,4 @@ export class LoginComponent implements OnInit {
         })   
       return false;
     }
-
-  ngOnInit(): void {
-
-  }
-
 }

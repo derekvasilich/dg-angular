@@ -6,7 +6,7 @@
 <app-pagination [currentPage]="currentPage" 
 	[disabled]="isLoading$ | async"
 	[totalPages]="totalPages"
-	(change)="onPageChange($event)"></app-pagination>
+	(pageChange)="onPageChange($event)"></app-pagination>
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -22,7 +22,7 @@
 			</td>
 		</tr>
 	</tbody>
-	<tbody *ngIf="!(isLoading$ | async)">
+	<tbody *ngIf="(isLoading$ | async) === false">
 		<!-- <tr *ngFor="let vehicle of vehicles | filter: query | orderBy: orderProp"> -->
         <tr *ngFor="let vehicle of filteredVehicles">
 			<td>
@@ -37,4 +37,4 @@
 </table>
 <app-pagination [currentPage]="currentPage" 
 	[totalPages]="totalPages"
-	(change)="onPageChange($event)"></app-pagination>
+	(pageChange)="onPageChange($event)"></app-pagination>

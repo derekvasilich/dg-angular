@@ -10,7 +10,7 @@ export class PaginationComponent implements OnInit, OnChanges {
     @Input() currentPage: number = 1;
     @Input() totalPages: number = 0;
     @Input() isLoading: boolean;
-    @Output() change = new EventEmitter<number>();
+    @Output() pageChange = new EventEmitter<number>();
     pageKeys: number[] = [];
 
   constructor(
@@ -33,15 +33,15 @@ export class PaginationComponent implements OnInit, OnChanges {
   }
 
   previous() {
-    this.change.emit(this.currentPage-1);
+    this.pageChange.emit(this.currentPage-1);
   }
 
   page(page: number) {
-    this.change.emit(page);
+    this.pageChange.emit(page);
   }
   
   next() {
-    this.change.emit(this.currentPage+1);
+    this.pageChange.emit(this.currentPage+1);
   }
 
   ngOnInit(): void {
