@@ -3,5 +3,6 @@ describe('My First Test', () => {
     cy.visit('/');
     cy.get('[data-test-id="loginButton"]')
       .should('exist').should('be.visible');
+    cy.get('header p').should('contain.text', 'DealerGears');
   })
 })
