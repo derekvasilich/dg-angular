@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { AppRoutingModule } from '../app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { VehicleDetailComponent } from './vehicle-detail.component';
 
 describe('VehicleDetailComponent', () => {
@@ -8,7 +9,8 @@ describe('VehicleDetailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VehicleDetailComponent ]
+      declarations: [ VehicleDetailComponent ],
+      imports: [ AppRoutingModule, HttpClientModule ]
     })
     .compileComponents();
   });

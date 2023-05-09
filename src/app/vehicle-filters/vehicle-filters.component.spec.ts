@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { VehicleFiltersComponent } from './vehicle-filters.component';
+import { INJECTOR } from '@angular/core';
 
 describe('VehicleFiltersComponent', () => {
   let component: VehicleFiltersComponent;
@@ -8,7 +10,8 @@ describe('VehicleFiltersComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VehicleFiltersComponent ]
+      declarations: [ VehicleFiltersComponent ],
+      imports: [ FormsModule ]
     })
     .compileComponents();
   });

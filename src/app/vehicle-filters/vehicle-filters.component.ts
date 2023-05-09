@@ -9,8 +9,8 @@ import { Vehicle } from '../models/vehicle';
 })
 export class VehicleFiltersComponent {
   @Input() filteredVehicles: Vehicle[];
-  @Input() filters: VehicleFilters;
-  @Input() priceRange: Number[];
+  @Input() filters: VehicleFilters = {sort:null, min:0, max:Infinity, query:null};
+  @Input() priceRange: Number[] = [0, Infinity];
   @Input() disabled: boolean;
 
   constructor() { }

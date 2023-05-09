@@ -26,10 +26,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('dg-angular');
   });
 
-  it('should render title', () => {
+  it('should render login', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('dg-angular app is running!');
+    expect(compiled.querySelector('header p').textContent).toContain('DealerGears');
   });
 });
