@@ -1,10 +1,10 @@
 <div class="col-md-10 mx-auto col-lg-5">
+    <div *ngIf="error" class="alert alert-danger" role="alert">
+        {{ error.status }}: {{ error.message }}
+    </div>
     <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary"
         (submit)="login(email.value, password.value)"
     >
-      <div *ngIf="error" className="alert alert-danger" role="alert">
-        {{ error.status }}: {{ error.message }}
-      </div>
       <div class="form-floating mb-3">
         <input
           id="floatingInput"

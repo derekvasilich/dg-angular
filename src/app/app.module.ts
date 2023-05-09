@@ -10,6 +10,8 @@ import { PaginationComponent } from './global/pagination/pagination.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { VehicleFiltersComponent } from './vehicle-filters/vehicle-filters.component';
+import { SpinnerComponent } from './global/spinner/spinner.component';
+import { CarouselComponent } from './global/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { VehicleFiltersComponent } from './vehicle-filters/vehicle-filters.compo
     VehicleDetailComponent,
     LoginComponent,
     PaginationComponent,
-    VehicleFiltersComponent
+    VehicleFiltersComponent,
+    SpinnerComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

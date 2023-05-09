@@ -11,6 +11,7 @@ export class VehicleFiltersComponent implements OnInit {
   @Input() filteredVehicles: Vehicle[];
   @Input() filters: VehicleFilters;
   @Input() priceRange: Number[];
+  @Input() disabled: boolean;
 
   constructor() { }
 

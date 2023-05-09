@@ -1,8 +1,10 @@
 <app-vehicle-filters [filteredVehicles]="filteredVehicles"
+	[disabled]="isLoading$ | async"
 	[filters]="filters"	
 	[priceRange]="priceRange"
 	></app-vehicle-filters>
 <app-pagination [currentPage]="currentPage" 
+	[disabled]="isLoading$ | async"
 	[totalPages]="totalPages"
 	(change)="onPageChange($event)"></app-pagination>
 <table class="table table-striped">
@@ -13,7 +15,14 @@
 			<th></th>
 		</tr>
 	</thead>
-	<tbody>
+	<tbody *ngIf="isLoading$ | async">
+		<tr>
+			<td colspan="3">
+				<app-spinner></app-spinner>
+			</td>
+		</tr>
+	</tbody>
+	<tbody *ngIf="!(isLoading$ | async)">
 		<!-- <tr *ngFor="let vehicle of vehicles | filter: query | orderBy: orderProp"> -->
         <tr *ngFor="let vehicle of filteredVehicles">
 			<td>

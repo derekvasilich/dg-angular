@@ -24,9 +24,7 @@ export class VehicleListComponent implements OnInit {
   constructor(
     private router: Router,
     private vehicleService: VehiclesService,
-  ) {
-
-  }
+  ) { }
 
   get filteredVehicles(): Vehicle[] {    
     if (
@@ -85,6 +83,9 @@ export class VehicleListComponent implements OnInit {
     );    
   }
 
+  isLoading$ = this.vehicleService.isLoading$;
+  isError$ = this.vehicleService.isError$;
+
   fetchVehicles() {
     this.vehicleService.getVehicles(this.currentPage, this.pageSize)
       .subscribe(data => {
@@ -101,7 +102,7 @@ export class VehicleListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.fetchVehicles();
+    this.fetchVehicles();    
   }
 
 }

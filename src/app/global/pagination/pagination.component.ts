@@ -9,6 +9,7 @@ export class PaginationComponent implements OnInit, OnChanges {
     @Input() disabled: boolean = false;
     @Input() currentPage: number = 1;
     @Input() totalPages: number = 0;
+    @Input() isLoading: boolean;
     @Output() change = new EventEmitter<number>();
     pageKeys: number[] = [];
 

@@ -6,9 +6,9 @@
 	</div>
 	<div class="card-body">
 	  <h1 class="card-title pricing-card-title">{{vehicle.price | currency}}</h1>
-		<img style="display:block; margin-left:auto; margin-right:auto;" 
-            [src]="vehicle?.description?.description?.style?.stockImage?.url" 
-            [alt]="vehicle.name" />
+		<app-carousel [images]="vehicleImages"
+			[showControls]="vehicleImages.length > 1"
+			[showIndicators]="vehicleImages.length > 1"></app-carousel>
 		<table class="table table-striped">
 			<tbody>
 				<tr>
